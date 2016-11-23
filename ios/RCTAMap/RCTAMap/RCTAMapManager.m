@@ -52,11 +52,11 @@ RCT_CUSTOM_VIEW_PROPERTY(options, NSDictionary, RCTAMap) {
         CGFloat height = [[frame objectForKey:@"height"] floatValue];
         view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, width, height);
     }
-    //地图类型，0为标准，1为卫星，默认为标准
-    if([keys containsObject:@"mapType"]) {
-        int mapType = [[options objectForKey:@"mapType"] intValue];
-        view.mapType = mapType;
-    }
+//    //地图类型，0为标准，1为卫星，默认为标准
+//    if([keys containsObject:@"mapType"]) {
+//        int mapType = [[options objectForKey:@"mapType"] intValue];
+//        view.mapType = mapType;
+//    }
     //是否显示路况，默认不显示
     if([keys containsObject:@"showTraffic"]) {
         BOOL showTraffic = [[options objectForKey:@"showTraffic"] boolValue];
@@ -100,15 +100,19 @@ RCT_CUSTOM_VIEW_PROPERTY(options, NSDictionary, RCTAMap) {
             pointAnnotaiton.lockedToScreen = YES;
             CGPoint screenPoint = [view convertCoordinate:view.centerCoordinate toPointToView:view];
             
-            UIImage *image = [UIImage imageNamed:@"icon_location.png"];
-            
-//            NSLog(@"screenPoint.x = %f, screenPoint.y = %f", screenPoint.x, screenPoint.y);
-            
-            pointAnnotaiton.lockedScreenPoint = CGPointMake(screenPoint.x, screenPoint.y - image.size.height / 2);
-            
-            //screenPoint.x = 183.129769, screenPoint.y = 126.198228
-            
-            [view addAnnotation:pointAnnotaiton];
+            if([keys containsObject:@"centerMarker"]) {
+                view.centerMarker = [options objectForKey:@"centerMarker"];
+                
+                UIImage *image = [UIImage imageNamed:view.centerMarker];
+                
+                //NSLog(@"screenPoint.x = %f, screenPoint.y = %f", screenPoint.x, screenPoint.y);
+                
+                pointAnnotaiton.lockedScreenPoint = CGPointMake(screenPoint.x, screenPoint.y - image.size.height / 2);
+                
+                //screenPoint.x = 183.129769, screenPoint.y = 126.198228
+                
+                [view addAnnotation:pointAnnotaiton];
+            }
         }
     }
 }
@@ -418,7 +422,7 @@ RCT_EXPORT_METHOD(searchPoiByCenterCoordinate:(NSDictionary *)params)
         annotationView.canShowCallout   = NO;
         annotationView.animatesDrop     = NO;
         annotationView.draggable        = NO;
-        annotationView.image            = [UIImage imageNamed:@"icon_location.png"];
+        annotationView.image            = [UIImage imageNamed:mapView.centerMarker];
         
         return annotationView;
     }
@@ -523,7 +527,7 @@ RCT_EXPORT_METHOD(searchPoiByCenterCoordinate:(NSDictionary *)params)
         pointAnnotaiton.lockedToScreen = YES;
         CGPoint screenPoint = [mapView convertCoordinate:userLocation.location.coordinate toPointToView:mapView];
         
-        UIImage *image = [UIImage imageNamed:@"icon_location.png"];
+        UIImage *image = [UIImage imageNamed:mapView.centerMarker];
         
 //        NSLog(@"screenPoint.x = %f, screenPoint.y = %f", screenPoint.x, screenPoint.y);
         
@@ -610,7 +614,9 @@ RCT_EXPORT_METHOD(searchPoiByCenterCoordinate:(NSDictionary *)params)
                             @"localizedDescription": error.localizedDescription
                           }
                };
-    [self.bridge.eventDispatcher sendAppEventWithName:@"amap.onPOISearchFailed"
+//    [self.bridge.eventDispatcher sendAppEventWithName:@"amap.onPOISearchFailed"
+//                                                 body:result];
+    [self.bridge.eventDispatcher sendAppEventWithName:@"amap.onPOISearchDone"
                                                  body:result];
 }
 

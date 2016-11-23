@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) RCTBubblingEventBlock onDidMoveByUser;
 
+@property (nonatomic, copy) NSString *centerMarker;
+
 - (id)initWithManager: (RCTAMapManager*)manager;
 
 @end

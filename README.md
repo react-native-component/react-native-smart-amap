@@ -27,6 +27,8 @@ npm install react-native-smart-amap --save
 
 * 将RCTAMap目录里Frameworks目录拖进主project目录下, 选择copy items if needed, create groups, 另外add to target不要忘记选择主project.
 
+* 将RCTAMap目录里Frameworks目录里的AMap.bundle拖进主project目录下, 选择copy items if needed, create groups, 另外add to target不要忘记选择主project.
+
 * 点击你的主project, 选择Build Phases -> Link Binary With Libraries, 将RCTAMap.xcodeproj里Product目录下的libRCTAMap.a拖进去.
 
 * 同上位置, 选择Add items, 将系统库libstdc++.6.0.9.tbd加入.

@@ -10,14 +10,7 @@ import com.amap.api.location.AMapLocation;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/**
- * 辅助工具类
- * @创建时间： 2015年11月24日 上午11:46:50
- * @项目名称： AMapLocationDemo2.x
- * @author hongming.wang
- * @文件名称: Utils.java
- * @类型名称: Utils
- */
+
 public class Utils {
 	/**
 	 *  开始定位

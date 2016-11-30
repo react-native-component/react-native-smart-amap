@@ -41,9 +41,7 @@ import static com.amap.api.maps2d.AMapOptions.LOGO_POSITION_BOTTOM_RIGHT;
 import static com.amap.api.maps2d.AMapOptions.ZOOM_POSITION_RIGHT_CENTER;
 
 
-/**
- * Created by shiyunjie on 16/11/9.
- */
+
 
 public class RCTAMapView extends FrameLayout implements LocationSource, AMapLocationListener, AMap.OnCameraChangeListener {
     private String centerMarker = "";

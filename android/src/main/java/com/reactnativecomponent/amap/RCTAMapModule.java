@@ -113,6 +113,12 @@ public class RCTAMapModule extends ReactContextBaseJavaModule implements PoiSear
                         data.putString("address", poi.getSnippet());
                         data.putString("tel", poi.getTel());
                         data.putInt("distance", poi.getDistance());
+                        data.putString("cityCode", poi.getCityCode());
+                        data.putString("cityName", poi.getCityName());
+                        data.putString("provinceCode", poi.getProvinceCode());
+                        data.putString("provinceName", poi.getProvinceName());
+                        data.putString("adCode", poi.getAdCode());
+                        data.putString("adName", poi.getAdName());
                         array.pushMap(data);
                     }
                     dataMap.putArray("searchResultList", array);

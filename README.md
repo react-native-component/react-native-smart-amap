@@ -23,7 +23,7 @@ npm install react-native-smart-amap@untilRN0.40 --save
 
 ## Notice
 
-这个版本仅支持到react-native 0.4.0, 如果你想使用最新的版本，使用`npm install react-native-smart-amap --save`
+这个版本仅支持到react-native 0.40以下, 如果你想使用最新的版本，使用`npm install react-native-smart-amap --save`
 
 
 ## 安装 (iOS)

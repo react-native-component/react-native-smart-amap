@@ -1,6 +1,6 @@
 {
   "name": "react-native-smart-amap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A AMap Library for React Native apps.",
   "main": "AMap.js",
   "scripts": {

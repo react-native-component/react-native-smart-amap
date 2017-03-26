@@ -5,8 +5,8 @@
 
 #import "RCTAMapManager.h"
 #import "RCTAMap.h"
-#import "RCTUIManager.h"
-#import "RCTBridge.h"
+#import <React/RCTUIManager.h>
+#import <React/RCTBridge.h>
 
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>

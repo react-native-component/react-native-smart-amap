@@ -18,12 +18,12 @@ Mac下Android Studio中获取SHA1和MD5请点击[这里][3]
 ## 安装
 
 ```
-npm install react-native-smart-amap@untilRN0.40 --save
+npm install react-native-smart-amap --save
 ```
 
 ## Notice
 
-这个版本仅支持到react-native 0.4.0, 如果你想使用最新的版本，使用`npm install react-native-smart-amap --save`
+这个版本仅支持react-native 0.40及以上, 如果你想使用旧版本，使用`npm install react-native-smart-amap@untilRN0.40 --save`
 
 
 ## 安装 (iOS)

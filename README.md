@@ -18,8 +18,13 @@ Mac下Android Studio中获取SHA1和MD5请点击[这里][3]
 ## 安装
 
 ```
-npm install react-native-smart-amap --save
+npm install react-native-smart-amap@untilRN0.40 --save
 ```
+
+## Notice
+
+这个版本仅支持到react-native 0.4.0, 如果你想使用最新的版本，使用`npm install react-native-smart-amap --save`
+
 
 ## 安装 (iOS)
 
@@ -467,6 +472,7 @@ options.centerMarker        | string | Yes      |           | 设置中心点自
         * page 类型: number 表示当前页数, 范围1-100, 默认1
         * keywords 类型: string 表示查询关键字，多个关键字用“|”分割
         * coordinate 类型: object 表示中心点经纬度, 数据结构同上Props中的options.centerCoordinate
+        * radius 类型: int 表示辐射半径, 默认3000米
 
 ## 事件监听
 

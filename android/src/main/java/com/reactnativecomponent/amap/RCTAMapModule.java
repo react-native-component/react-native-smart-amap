@@ -20,6 +20,7 @@ public class RCTAMapModule extends ReactContextBaseJavaModule implements PoiSear
     ReactApplicationContext mContext;
 
     private PoiSearch poiSearch;
+    private int defaultRadius = 3000;
 
     public RCTAMapModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -87,7 +88,11 @@ public class RCTAMapModule extends ReactContextBaseJavaModule implements PoiSear
             ReadableMap coordinateMap = params.getMap("coordinate");
             double latitude = coordinateMap.getDouble("latitude");
             double longitude = coordinateMap.getDouble("longitude");
-            poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude, longitude), 1000));//设置周边搜索的中心点以及半径
+            int radius = defaultRadius;
+            if (params.hasKey("radius")) {
+                radius = params.getInt("radius");
+            }
+            poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude, longitude), radius)); //设置周边搜索的中心点以及半径(单位: 米, 默认3公里)
         }
         poiSearch.setOnPoiSearchListener(this);
         poiSearch.searchPOIAsyn();

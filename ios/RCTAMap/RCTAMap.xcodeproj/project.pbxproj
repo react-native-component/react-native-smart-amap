@@ -243,6 +243,12 @@
 		9F12EBD01DD30C6600029EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../../ios/Pods/AMapFoundation",
+					"$(SRCROOT)/../../../../ios/Pods/AMapSearch",
+					"$(SRCROOT)/../../../../ios/Pods/AMap3DMap",
+					"$(SRCROOT)/../../../ios/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -258,6 +264,12 @@
 		9F12EBD11DD30C6600029EAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../../ios/Pods/AMapFoundation",
+					"$(SRCROOT)/../../../../ios/Pods/AMapSearch",
+					"$(SRCROOT)/../../../../ios/Pods/AMap3DMap",
+					"$(SRCROOT)/../../../ios/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

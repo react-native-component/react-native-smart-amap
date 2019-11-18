@@ -642,6 +642,11 @@ RCT_EXPORT_METHOD(searchPoiByCenterCoordinate:(NSDictionary *)params)
                                     @"address": obj.address,
                                     @"tel": obj.tel,
                                     @"distance": @(obj.distance)
+                                    @"cityName": obj.city,
+                                    @"provinceName": obj.province,
+                                    @"cityCode": obj.citycode,
+                                    @"provinceCode": obj.pcode,
+                                    @"adCode": obj.adcode
                                     }];
             
         }];
